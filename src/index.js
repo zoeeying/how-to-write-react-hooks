@@ -9,6 +9,4 @@ import ReactDOM from 'react-dom'
 // import Demo from './useRef'
 import Demo from './useSize'
 
-
 ReactDOM.render(<Demo />, document.getElementById('root'))
-
