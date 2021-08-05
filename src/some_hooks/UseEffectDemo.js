@@ -9,22 +9,32 @@ const Home = () => {
     }
   }, [])
   return (
-    <><h2>首页</h2></>
+    <>
+      <h2>首页</h2>
+    </>
   )
 }
 const List = () => {
   return (
-    <><h2>列表</h2></>
+    <>
+      <h2>列表</h2>
+    </>
   )
 }
 
-export default () => {
+export default function UseEffectDemo() {
   const [count, setCount] = useState(0)
 
   return (
     <>
       <p>点击了 {count} 次</p>
-      <button onClick={() => { setCount(prev => prev + 1) }}>点击</button>
+      <button
+        onClick={() => {
+          setCount(prev => prev + 1)
+        }}
+      >
+        点击
+      </button>
 
       <Router>
         <ul>

@@ -24,14 +24,14 @@
 // }
 
 import React, { useState } from 'react'
-export default (props) => {
+export default function Counter(props) {
   const [count, setCount] = useState(0)
   return (
     <>
       <p>点击了 {count} 次</p>
       <button
         onClick={() => {
-          setCount((prev) => prev + 1)
+          setCount(prev => prev + 1)
         }}
       >
         点击

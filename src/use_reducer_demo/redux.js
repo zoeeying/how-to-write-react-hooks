@@ -4,7 +4,7 @@ import React, { createContext, useReducer } from 'react'
 export const ColorContext = createContext({})
 
 // 改变状态的操作
-export const UPDATE_COLOR = "UPDATE_COLOR"
+export const UPDATE_COLOR = 'UPDATE_COLOR'
 
 // reducer函数
 const reducer = (state, action) => {
@@ -19,9 +19,6 @@ const reducer = (state, action) => {
 // 包裹起来的组件可以共享Context对象
 export const Color = props => {
   const [color, dispatch] = useReducer(reducer, 'blue')
-  return (
-    <ColorContext.Provider value={{ color, dispatch }}>
-      {props.children}
-    </ColorContext.Provider>
-  )
+
+  return <ColorContext.Provider value={{ color, dispatch }}>{props.children}</ColorContext.Provider>
 }

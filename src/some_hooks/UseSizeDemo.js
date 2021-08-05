@@ -24,7 +24,7 @@ const useSize = () => {
   return size
 }
 
-export default () => {
+export default function UseSizeDemo() {
   const size = useSize()
   return (
     <>

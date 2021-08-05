@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
-export default () => {
+
+export default function UseRefDemo() {
   // 用来获取DOM元素
   const inputElement = useRef()
   const textRef = useRef()
@@ -22,7 +23,12 @@ export default () => {
       <button onClick={onClick}>按钮</button>
       <br />
       <br />
-      <input value={text} onChange={(e) => { setText(e.target.value) }} />
+      <input
+        value={text}
+        onChange={e => {
+          setText(e.target.value)
+        }}
+      />
     </>
   )
 }
