@@ -6,7 +6,7 @@ import { Button } from 'antd'
 const ThemeContext = createContext({ theme: 'light' }) // 建立一个Context对象
 
 export default class UseContext extends React.Component {
-  render () {
+  render() {
     // AppContext.Provider提供了一个Context对象，这个对象可以被子组件共享
     // 使用一个Provider来将当前的theme传递给下面的组件树，无论多深，任何组件都能读取这个值
     return (
@@ -18,7 +18,7 @@ export default class UseContext extends React.Component {
 }
 
 // 中间的组件再也不必指明往下传递theme了
-function Toolbar (props) {
+function Toolbar(props) {
   return (
     <div>
       <ThemedButton />
@@ -30,8 +30,8 @@ class ThemedButton extends React.Component {
   // 指定contextType读取当前的Context对象
   // 当React渲染一个订阅了这个Context对象的组件，这个组件会从组件树中离自身最近的那个匹配的Provider中读取到当前的Context值
   static contextType = ThemeContext
-  render () {
+  render() {
     // 注意是通过this.context读取当前的Context值
-    return <Button theme={this.context}>按钮 </Button>
+    return <Button theme={this.context}>按钮</Button>
   }
 }
